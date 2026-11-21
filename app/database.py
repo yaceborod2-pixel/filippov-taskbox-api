@@ -8,3 +8,13 @@ engine = create_engine(
         "check_same_thread": False
     }
 )
+
+
+SessionLocal = sessionmaker(
+    bind = engine,
+    autoflush = False,
+    expire_on_commit=False
+)
+
+сlass Base(DeclarativeBase):
+    pass
